@@ -133,16 +133,19 @@ public class ReservationController {
                 String phone_msg = "";
                 String email_body = "";
                 
+                DateFormat msg_formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                msg_formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
+                
                 email_body = "<h1>*(Demo only)</h1>" + "<br><hr><br>";
                 email_body += "Thank you for your reservation. Here is your basic info:" + "<br><br>";
-                email_body += "From: " + format.format(startDate) + "<br>";
-                email_body += "To: " + format.format(endDate) + "<br>";
+                email_body += "From: " + msg_formatter.format(startDate) + "<br>";
+                email_body += "To: " + msg_formatter.format(endDate) + "<br>";
                 email_body += "Purpose: " + res.getSubject() + "<br>";
                 
                 phone_msg = "*(Demo only)" + "\n" + "\n";
                 phone_msg += "Thank you for your reservation. Here is your basic info:" + "\n";
-                phone_msg += "From: " + format.format(startDate) + "\n";
-                phone_msg += "To: " + format.format(endDate) + "\n";
+                phone_msg += "From: " + msg_formatter.format(startDate) + "\n";
+                phone_msg += "To: " + msg_formatter.format(endDate) + "\n";
                 phone_msg += "Purpose: " + res.getSubject() + "\n";
                 
                 String email_body_final = email_body;
