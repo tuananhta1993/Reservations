@@ -1,8 +1,7 @@
-# type_your_words
+# Reservation Calendar
 App written in Java
-
-Reservation calendar
-Ta Tuan Anh
+Creator: Ta Tuan Anh
+Created: Jan, 2017.
 
 Demo user:
 - Username: demo
