@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="manager">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <!--<link rel="icon" href="../../favicon.ico"/>-->
+
+        <title>Reservation</title>
+        <link rel="shortcut icon" href="/images/logo6.PNG" />
+
+        <!-- Bootstrap core CSS -->
+        <link href="/stylesheets/main.css" rel="stylesheet" />
+        <link href="/stylesheets/bootstrap_datetimepicker.css" rel="stylesheet" />
+        
+        
+        <script type="text/javascript" src="/javascript/jquery.min.js"></script>
+        <script type='text/javascript' src='/javascript/bootstrap.min.js'></script>
+        
+        <script type="text/javascript" src="/javascript/jquery-1.4.4.min.js"></script>
+        <script type='text/javascript' src='/javascript/jquery-ui-1.8.11.custom.min.js'></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- HEADER -->
+            <div id="header_layout" class="navbar navbar-default navbar-fixed-top" style="background-color:#656565; padding-left: 20px; padding-right: 20px;">
+                <div class="container">
+                    <div class="col-md-2 hidden-xs center-block text-center">
+                        <a href="/" style="color:#ffffff; font-size:30px;"><span class="glyphicon glyphicon-calendar" style="top: 5px;"></span></a>
+                    </div>
+                    <div>
+                        <div class="navbar-header">
+                            <div class="row" style="display: -webkit-box;">
+                                <a href="/" class="visible-xs-block" style="color:#ffffff; position:fixed; right:5%; top:5px;">
+                                    <!--<img src="/images/logo6_xs.png" style="height:60px;" />-->
+                                    <span style="font-size: 50px;" class="glyphicon glyphicon-calendar"></span>
+                                </a>
+
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="position: relative; right: 0;">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="text-center"><span class="navbar-text"><a href="/">Home</a> </span></li>
+                                <li class="text-center"><span class="navbar-text"><a href="/calendar">Reservations</a> </span></li>
+                                <li th:if="${isAuthenticated==true}" class="text-center"><span class="navbar-text"><a href="/Manage">Account</a> </span></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <li th:if="${isAuthenticated==false}">
+                                    <a id="register-btn1" style="cursor:pointer" href="/register"><span class="glyphicon glyphicon-user"></span> Register</a>
+                                </li>
+                                <li th:if="${isAuthenticated==false}">
+                                    <a id="login-btn1" style="cursor:pointer" href="/login"><span class=" glyphicon glyphicon-log-in">
+                                        </span> Log in</a>
+                                </li>
+                                <li th:if="${isAuthenticated==true}" class="text-center center-block">
+                                    <a href="/Manage"><span class="glyphicon glyphicon-user"></span> <span th:text="${username}">username</span></a>
+                                </li>
+                                <li th:if="${isAuthenticated==true}">
+                                    <a id="logout-btn1" style="cursor:pointer" href="/logout"><span class=" glyphicon glyphicon-log-out">
+                                        </span> Log out</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container hidden-md hidden-lg" style="margin:20px;">
+            </div>
+            <div class="container">
+                <!-- MAIN CONTENT HERE!!! -->
+                <div layout:fragment="content">
+                    <!-- ============================================================================ -->
+                    <!-- This content is only used for static prototyping purposes (natural templates)-->
+                    <!-- and is therefore entirely optional.                                          -->
+                    <!-- ============================================================================ -->
+                    <h1>Static content for prototyping purposes only</h1>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+                        Phasellus et placerat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+                        Phasellus et placerat elit.
+                    </p>
+
+                </div>
+                <!-- END OF MAIN CONTENT -->
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <hr />
+
+        <!--FOOTER-->
+        <footer class="text-center">
+            <div class="col-md-6 col-md-push-6 text-center">
+                <div class="container">
+                    <div class="col-md-7">
+                        <ol style='display: none'>
+                            <li>
+                                <span class="text-center" style="margin-right:15px;"><a style="color:#808080; font-size:14px;" href="/resources/pdf/user_guide.pdf">How does this work?</a></span>
+                            </li>
+                            <li>
+                                <span class="text-center" style="margin-right:15px;"><a style="color:#808080; font-size:14px;" href="/resources/pdf/documentation.pdf">Tech documentation</a></span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-md-pull-5 text-center container">
+                <hr class="visible-sm visible-xs" style="margin-top:15px;"/>
+                <div class="container">
+                    <div>
+                        <span style="color:#808080; font-size:14px;">© 2017 - Reservation Calendar</span>
+                    </div>
+                    <span class="text-muted" style="font-size:13px; margin-left:20px">Ta Tuan Anh, Helsinki, Finland </span>
+                </div>
+                <div>
+                    <center style="padding-top:20px;padding-bottom:20px">
+                        <span><a href=""><img src="/images/email.png" class="icon_social"/></a></span>
+                        <span><a href=""><img src="/images/linkedin.png" class="icon_social"/></a></span>
+                        <span><a href=""><img src="/images/github.png" class="icon_social"/></a></span>
+                    </center>
+                </div>
+            </div>
+        </footer>
+        
+        <script th:if="${isAuthenticated==true}">
+
+        </script>
+    </body>
+</html>

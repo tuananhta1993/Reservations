@@ -1,0 +1,46 @@
+<html layout:decorator="layout">
+    <div layout:fragment="content">
+        <style>
+            .center:hover {
+                cursor:pointer;
+            }
+        </style>
+        <center class='center' onclick="window.location='/calendar'">
+            <div style="padding-top:50px;">
+                <span style="font-size:50px;" class="glyphicon glyphicon-calendar"></span>
+            </div>
+            <div style="padding:30px; margin:30px;">
+                <span style="font-size:50px;" >Reservation Calendar</span>
+            </div>
+        </center>
+        <hr/>
+        <div class="col-md-6 col-md-offset-3">
+            <ol>
+                <li>
+                    <b>How does it work?</b><br/><br/>
+                    <ul>
+                        <li>Everyone can see the reservation calendar.</li>
+                        <li>Only authenticated user is allowed to create/ delete the reservation.</li>
+                        <li>After reserve a time in the calendar, authorized user will receive the confirmation messages via the registered phone, and email.</li>
+                    </ul>
+                    <br/>
+                    <br/>
+                </li>
+                <li>
+                    
+                    <b>Event's color convention:</b><br/>
+                    <ul>
+                        <li>
+                            <img src="/images/your_reservation.png" style="width:150px; padding:20px" /> : Your reservation
+                        </li>
+                        <li>
+                            <img src="/images/others_reservation.png" style="width:150px; padding:20px" /> : Other's reservation
+                        </li>
+                    </ul>
+
+                </li>
+            </ol>
+
+        </div>
+    </div>
+</html>
